@@ -1,28 +1,41 @@
 import React from "react";
+import { Country } from "./CountryList";
 
 interface CountryCardProps {
-  country: any; // Adjust the type based on the API response structure
+  country: Country;
 }
 
 const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
-  //   console.log("country.name.common", country.name.common);
   return (
-    <div>
+    <div className="card">
       <img src={country.flags?.png} alt={`${country.name.common} Flag`} />
       <h2>{country.name.common}</h2>
-      <p>Population: {country.population}</p>
-      <p>Capital: {country.capital}</p>
-      <p>Region: {country.region}</p>
       <p>
-        Language:{" "}
+        <strong>Population: </strong> {country.population.toLocaleString()}
+      </p>
+      <p>
+        <strong>Capital: </strong> {country.capital}
+      </p>
+      <p>
+        <strong>Region: </strong> {country.region}
+      </p>
+      <p>
+        <strong>Language: </strong>
+
         {country.languages
           ? Object.values(country.languages).join(", ")
           : "N/A"}
       </p>
       <p>
-        Currencies:{" "}
+        <strong>Currencies: </strong>
+
         {country.currencies
-          ? Object.values(country.currencies).join(", ")
+          ? Object.entries(country.currencies).map(([code, currency]) => (
+              <span key={code}>
+                {currency.name} ({currency.symbol})
+                {Object.keys(country.currencies).length > 1 && <>, </>}
+              </span>
+            ))
           : "N/A"}
       </p>
     </div>
