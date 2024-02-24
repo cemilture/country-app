@@ -13,10 +13,11 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="search-input">
+    <div>
       <input
+        className="search-input"
         type="text"
-        placeholder="Search by country name"
+        placeholder="Country Name Search "
         value={searchTerm}
         onChange={handleInputChange}
       />

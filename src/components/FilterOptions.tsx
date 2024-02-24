@@ -9,12 +9,11 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ onSortChange }) => {
   };
 
   return (
-    <div>
-      <label htmlFor="sort">Sort by: </label>
-      <select id="sort" onChange={handleSortChange}>
-        {/* <option value="beginning">---</option> */}
-        <option value="name">Name</option>
-        <option value="population">Population</option>
+    <div className="filter-options-container">
+      <label className="filter-label" htmlFor="sort"></label>
+      <select className="filter-select" id="sort" onChange={handleSortChange}>
+        <option value="name">Name (a-z)</option>
+        <option value="population">Population (desc.)</option>
       </select>
     </div>
   );

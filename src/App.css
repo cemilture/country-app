@@ -1,4 +1,57 @@
-/* CountryCard.css */
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.filter-options-container {
+  margin: 20px;
+}
+
+.filter-label {
+  margin-right: 10px;
+}
+
+.filter-select {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.filter-select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.filter-select:hover,
+.filter-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: center;
+}
 
 .card {
   border: 1px solid #ddd;
@@ -40,22 +93,4 @@
 
 .card p:last-child {
   margin-bottom: 0;
-}
-
-.search-input {
-  margin-bottom: 16px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-input:focus {
-  outline: none;
-  border-color: #007bff; /* Change the border color on focus to a desired color */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow on focus */
 }
